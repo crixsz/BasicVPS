@@ -3,8 +3,8 @@
 clear
 clear
 echo -e "[ Installing updates and upgrades from repos ..]"
-apt-get update >> /dev/null
-apt-get upgrade >> /dev/null
+apt-get update 
+apt-get upgrade 
 sleep 10
 # Get all necessary package
 clear
