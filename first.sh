@@ -1,5 +1,7 @@
 #/usr/bin/
 # Get all updates and upgrade from repos
+clear
+clear
 echo -e "[ Installing updates and upgrades from repos ..]"
 apt-get update >> /dev/null
 apt-get upgrade >> /dev/null
