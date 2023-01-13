@@ -1,7 +1,6 @@
 #/usr/bin/
 # Get all updates and upgrade from repos
 clear
-clear
 echo -e "[ Installing updates and upgrades from repos ..]"
 apt-get update -y >> /dev/null
 apt-get upgrade -y >> /dev/null
@@ -29,4 +28,4 @@ echo -e "[ First time setup completed ! ]"
 sleep 5
 clear
 source .profile 
-
+rm -rf first.sh
