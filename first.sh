@@ -8,19 +8,17 @@ apt-get upgrade -y
 clear
 echo -e "[ Installing necessary packages ..]"
 apt-get install curl -y >> /dev/null
-sleep 3
+sleep 1
 apt-get install neofetch -y >> /dev/null
-sleep 3
+sleep 1
 apt-get install net-tools -y >> /dev/null
-sleep 3
+sleep 1
 apt-get install htop -y >> /dev/null
-sleep 3 
-apt-get install htop -y >> /dev/null
-sleep 3 
+sleep 1 
 curl https://getmic.ro | bash
 clear
 echo -e "[ Adding shorcut ..]"
-sleep 3
+sleep 2
 echo "neofetch" >> .profile
 echo "alias ports='netstat -tulpn | grep LISTEN'" >> .profile
 echo -e "[ First time setup completed ! ]"
