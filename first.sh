@@ -3,21 +3,21 @@
 clear
 clear
 echo -e "[ Installing updates and upgrades from repos ..]"
-apt-get update 
-apt-get upgrade 
+apt-get update -y >> /dev/null
+apt-get upgrade -y >> /dev/null
 sleep 10
 # Get all necessary package
 clear
 echo -e "[ Installing necessary packages ..]"
-apt-get install curl >> /dev/null
+apt-get install curl -y >> /dev/null
 sleep 3
-apt-get install neofetch >> /dev/null
+apt-get install neofetch -y >> /dev/null
 sleep 3
-apt-get install net-tools >> /dev/null
+apt-get install net-tools -y >> /dev/null
 sleep 3
-apt-get install htop >> /dev/null
+apt-get install htop -y >> /dev/null
 sleep 3 
-apt-get install htop >> /dev/null
+apt-get install htop -y >> /dev/null
 sleep 3 
 curl https://getmic.ro | bash
 clear
