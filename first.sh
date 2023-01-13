@@ -24,5 +24,8 @@ echo "alias ports='netstat -tulpn | grep LISTEN'" >> .profile
 echo -e "[ First time setup completed ! ]"
 sleep 5
 clear
-source .profile 
+source .profile
+echo -e "[ Rebooting in 5 seconds .. ]"
+sleep 5 
+reboot
 rm -rf first.sh
