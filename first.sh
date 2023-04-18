@@ -17,34 +17,6 @@ apt-get install htop -y >> /dev/null
 sleep 1 
 curl https://getmic.ro | bash
 sleep 1 
-curl -fsSL https://code-server.dev/install.sh | sh
-rm -rf .config/code-server/config.yaml
-echo -e
-"
-bind-addr: 0.0.0.0:8118
-auth: password
-password: zoxxenon
-cert: false
-" >> .config/code-server/config.yaml
-echo -e
-"
-[Unit]
-Description=Code-Server
-After=network.target
-
-[Service]
-Type=simple
-User=root
-WorkingDirectory=/root
-ExecStart=/usr/bin/code-server
-Restart=always
-TimeoutSec=30
-
-[Install]
-WantedBy=multi-user.target
-" >> /etc/systemd/system/code-server.service
-systemctl enable code-server
-systemctl restart code-server
 clear
 echo -e "[ Adding shorcut ..]"
 sleep 2
