@@ -19,6 +19,7 @@ curl https://getmic.ro | bash
 sleep 1 
 curl -fsSL https://code-server.dev/install.sh | sh
 sleep 2
+rm -rf .config/code-server
 mkdir .config/code-server/
 touch .config/code-server/config.yaml
 echo "
