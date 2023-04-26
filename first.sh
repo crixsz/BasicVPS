@@ -22,10 +22,11 @@ else
     sleep 1 
     curl -fsSL https://code-server.dev/install.sh | sh
     sleep 2
-    code-server
-    exit
+    code-server &
+    sleep 2
+    pid=$!
+    kill -INT $pid
     clear
-    rm -rf .config/code-server
     rm -rf .config/code-server
     mkdir .config/code-server/
     touch .config/code-server/config.yaml
