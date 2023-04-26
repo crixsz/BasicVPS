@@ -6,9 +6,12 @@
     <li>Debian 10 Buster</li>
   </ul>
 </p>
-<p align="center"><bold>Installation </bold></p>
-<pre><p>wget https://raw.githubusercontent.com/crixsz/BasicVPS/main/first.sh && chmod +x first.sh && ./first.sh<p></pre>
-<p align="center"><bold>Additional Info</bold></p>
+<p align="center"><b>Installation </b></p>
+
+```
+wget https://raw.githubusercontent.com/crixsz/BasicVPS/main/first.sh && chmod +x first.sh && ./first.sh
+```
+<p align="center"><b>Additional Info</b></p>
 <pre>
 <p>
 ports = Shows all LISTEN ports
