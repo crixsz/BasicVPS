@@ -75,7 +75,7 @@ else
             echo -e "[ Rebooting in 5 seconds .. ]"
             rm -rf first.sh
             sleep 5
-            sudo reboot
+            reboot
             ;;
         * )
             echo "Aborting reboot."
