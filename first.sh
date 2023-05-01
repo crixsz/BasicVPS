@@ -63,7 +63,7 @@ else
     echo "neofetch" >> .profile
     echo "alias ports='netstat -tulpn | grep LISTEN'" >> .profile
     echo -e "[ First time setup completed ! ]"
-    sleep 5
+    sleep 2
     clear
     source .profile
     # Prompt the user to confirm if they want to reboot
