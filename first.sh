@@ -61,7 +61,9 @@ else
     echo -e "[ Adding shorcut ..]"
     sleep 2
     echo "neofetch" >> .profile
-    echo "alias ports='netstat -tulpn | grep LISTEN'" >> .profile
+    touch /usr/local/bin/ports
+    echo "netstat -tulpn | grep LISTEN" > /usr/local/bin/ports
+    chmod +x /usr/local/bin/ports
     echo -e "[ First time setup completed ! ]"
     sleep 2
     clear
