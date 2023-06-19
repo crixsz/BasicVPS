@@ -1,9 +1,6 @@
 #/usr/bin/
 # Get all updates and upgrade from repos
 clear
-if command -v neofetch &> /dev/null; then
-    echo "Already ran the script !! "
-else
     echo -e "[ Installing updates and upgrades from repos ..]"
     apt-get update -y >> /dev/null
     apt-get upgrade -y >> /dev/null
