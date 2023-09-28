@@ -1,6 +1,8 @@
 #/usr/bin/
 # Get all updates and upgrade from repos
 clear
+    # make the prompt ask to restart not appear
+    echo '* libraries/restart-without-asking boolean true' | sudo debconf-set-selections
     echo -e "[ Installing updates and upgrades from repos ..]"
     apt-get update -y >> /dev/null
     # Get all necessary package
