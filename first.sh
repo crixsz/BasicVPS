@@ -10,7 +10,7 @@ clear
     sleep 1
     apt-get install neofetch -y >> /dev/null
     sleep 1
-    apt-get install net-tools -y >> /dev/null
+    apt-get install net-tools -y
     sleep 1
     apt-get install htop -y >> /dev/null
     sleep 1 
