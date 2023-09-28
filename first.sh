@@ -12,7 +12,7 @@ clear
     sleep 1
     DEBIAN_FRONTEND=noninteractive apt-get install neofetch -y >> /dev/null
     sleep 1
-    DEBIAN_FRONTEND=noninteractive apt-get install net-tools -y ?? /dev/null
+    DEBIAN_FRONTEND=noninteractive apt-get install net-tools -y >> /dev/null
     sleep 1
     DEBIAN_FRONTEND=noninteractive apt-get install htop -y >> /dev/null
     sleep 1 
