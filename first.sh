@@ -8,13 +8,13 @@ clear
     # Get all necessary package
     clear
     echo -e "[ Installing necessary packages ..]"
-    apt-get --no-prompt install curl -y >> /dev/null
+    DEBIAN_FRONTEND=noninteractive apt-get install curl -y >> /dev/null
     sleep 1
-    apt-get --no-prompt install neofetch -y >> /dev/null
+    DEBIAN_FRONTEND=noninteractive apt-get install neofetch -y >> /dev/null
     sleep 1
-    apt-get --no-prompt install net-tools -y
+    DEBIAN_FRONTEND=noninteractive apt-get install net-tools -y ?? /dev/null
     sleep 1
-    apt-get --no-prompt install htop -y >> /dev/null
+    DEBIAN_FRONTEND=noninteractive apt-get install htop -y >> /dev/null
     sleep 1 
     clear
     echo -e "[ Adding shorcut ..]"
