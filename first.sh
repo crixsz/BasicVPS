@@ -16,6 +16,11 @@ clear
     sleep 1
     DEBIAN_FRONTEND=noninteractive apt-get install htop -y >> /dev/null
     sleep 1 
+    curl https://getmic.ro | bash
+    cd /root/
+    mv micro /usr/local/bin
+    chmod +x micro
+    cd
     clear
     echo -e "[ Adding shorcut ..]"
     sleep 2
