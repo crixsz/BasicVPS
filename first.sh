@@ -22,6 +22,9 @@ clear
     chmod +x micro
     cd
     clear
+    #configure neofetch to show disk
+    sed -i 's/# info "Disk" disk/info "Disk" disk/' ~/.config/neofetch/config.conf
+    clear 
     echo -e "[ Adding shorcut ..]"
     sleep 2
     if grep -q "neofetch" /root/.profile; then
