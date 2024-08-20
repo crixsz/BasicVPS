@@ -28,7 +28,7 @@ clear
     clear
     echo -e "[ Adding shorcut ..]"
     sleep 2
-    if grep -q "neofetch" /root/.profile; then
+    if grep -q "fastfetch" /root/.profile; then
         touch /usr/local/bin/ports
         echo "netstat -tulpn | grep LISTEN" > /usr/local/bin/ports
         chmod +x /usr/local/bin/ports
@@ -38,7 +38,7 @@ clear
         source .profile
         echo "Done !"
     else
-        echo "neofetch" >> .profile
+        echo "fastfetch" >> .profile
         touch /usr/local/bin/ports
         echo "netstat -tulpn | grep LISTEN" > /usr/local/bin/ports
         chmod +x /usr/local/bin/ports
