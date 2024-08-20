@@ -10,7 +10,11 @@ clear
     echo -e "[ Installing necessary packages ..]"
     DEBIAN_FRONTEND=noninteractive apt-get install curl -y >> /dev/null
     sleep 1
-    DEBIAN_FRONTEND=noninteractive apt-get install neofetch -y >> /dev/null
+    # DEBIAN_FRONTEND=noninteractive apt-get install neofetch -y >> /dev/null
+    wget https://github.com/fastfetch-cli/fastfetch/releases/download/2.21.3/fastfetch-linux-amd64.deb
+    dpkg -i fastfetch-linux-amd64.deb
+    rm fastfetch-linux-amd64.deb
+    clear
     sleep 1
     DEBIAN_FRONTEND=noninteractive apt-get install net-tools -y >> /dev/null
     sleep 1
