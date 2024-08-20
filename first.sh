@@ -16,6 +16,8 @@ clear
     sleep 1
     DEBIAN_FRONTEND=noninteractive apt-get install htop -y >> /dev/null
     sleep 1 
+    DEBIAN_FRONTEND=noninteractive apt-get install sed -y >> /dev/null
+
     curl https://getmic.ro | bash
     cd /root/
     mv micro /usr/local/bin
