@@ -20,10 +20,11 @@ clear
     sleep 1
     DEBIAN_FRONTEND=noninteractive apt-get install ncdu -y >> /dev/null
     
-    curl https://getmic.ro | bash
-    cd /root/
-    mv micro /usr/local/bin
-    chmod +x micro
+    ## Install micro
+    wget https://github.com/zyedidia/micro/releases/download/v2.0.12/micro-2.0.12-amd64.deb 
+    dpkg -i micro-2.0.12-amd64.deb
+    mv /usr/bin/micro /usr/local/bin
+    rm micro-2.0.12-amd64.deb
     cd
     clear
     #configure neofetch to show disk
