@@ -97,17 +97,7 @@ for package in "${packages[@]}"; do
     # Configure neofetch
     echo -e "\n\033[1;34m⚙️ Configuring Neofetch...\033[0m"
     execute_with_status "sed -i 's/# info \"Disk\" disk/info \"Disk\" disk/' ~/.config/neofetch/config.conf" "Updating Neofetch configuration" 1
-    echo -e "\n\033[1;34m🔑 Setting up SSH access...\033[0m"
-    
-    # Setup SSH directory and files
-    execute_with_status "mkdir -p /root/.ssh && chmod 700 /root/.ssh" "Creating SSH directory" 1
-    execute_with_status "touch /root/.ssh/authorized_keys && chmod 600 /root/.ssh/authorized_keys" "Creating authorized_keys file" 1
-    
-    # Add SSH key
-    echo -e "\n\033[1;33m➜ Adding SSH key...\033[0m"
-    echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC0xxIhD3Xx7AgGEwe17/TnCnWcH8OYLudCYK1RY92iKnH3u81c3rRZzyiw0zK5W26theTAovy4+yctyeHVFlRXQywRF8ZMbGq3jbCUrhTrwoeIBI420f8iuED4aInwGdKocXpcncXP/2UJU7jRu7Ia2pIV94LeTLEwUhiQiHC5nrNeSVtbRmP9R3eUmADpQpi8AyXgMZW8KVuDiZdxdndSSGVQGTWxXVEIQMLxcC6N4Gi0uezOjK7dtUVVYtREyEhe8MfeutB2L0AWHDeNZeQLsCObxvNSTYIS7gutPCpV8Ij3CyKwjBpE2XVXUgIHzDhq+4GmW7rb9MIXqUV5+ByjbVOA/RhSIK3TnmLdbgXiXcl9p9umkU6OfK5N7xr5fOASyo8goSMdJEXLb6JHKACjb0DOk9tXZqCcWCLUCLQwf+dKpP9JIZxYJqWLSff/sA92cJJpT2e09JuxhGlUXPVyv4O4nDj5e0K5MTSc3v1yRNeofcUtdhK8KNjWbnnHW+M= pikai@DESKTOP-6ADGP1J" >> "$HOME/.ssh/authorized_keys"
-    chmod 600 "/root/.ssh/authorized_keys"
-    echo -e "\033[1;32m✓ SSH key added successfully!\033[0m\n"
+
 
     # Final setup
     echo -e "\n\033[1;34m🎉 Finalizing setup...\033[0m"
@@ -123,7 +113,6 @@ for package in "${packages[@]}"; do
     echo -e "\n\033[1;32m✨ Setup completed successfully! ✨\033[0m"
     echo -e "\033[1;34m• System has been configured"
     echo -e "• All packages have been installed"
-    echo -e "• SSH access has been set up"
     echo -e "• Custom commands are ready to use\033[0m\n"
     
     sleep 2
