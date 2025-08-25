@@ -46,6 +46,14 @@ echo -e "\033[1;36m╔═══════════════════�
 echo -e "║     Basic VPS Setup Script              ║"
 echo -e "╚═════════════════════════════════════════╝\033[0m\n"
 
+# Check if ports command is already installed
+if [ -f "/usr/local/bin/ports" ]; then
+    echo -e "\033[1;33m⚠️  Notice:\033[0m"
+    echo -e "\033[1;31m'ports' command is already installed on this system.\033[0m"
+    echo -e "\033[1;34mSkipping installation to prevent conflicts.\033[0m"
+    exit 0
+fi
+
 # Check if the system is Ubuntu or Debian
 if [ -f /etc/os-release ]; then
     . /etc/os-release
