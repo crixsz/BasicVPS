@@ -1,29 +1,43 @@
-#/usr/bin/
+#/usr/bin/bash
 # Get all updates and upgrade from repos
 clear
-    # make the prompt ask to restart not appear
-    echo '* libraries/restart-without-asking boolean true' | sudo debconf-set-selections
-    echo -e "[ Installing updates and upgrades from repos ..]"
-    apt-get update -y >> /dev/null
+
+# Check if the system is Ubuntu or Debian
+if [ -f /etc/os-release ]; then
+    . /etc/os-release
+    OS=$ID
+fi
+
+# Set the command prefix based on the OS
+if [ "$OS" = "ubuntu" ]; then
+    CMD_PREFIX="sudo"
+else
+    CMD_PREFIX=""
+fi
+
+# make the prompt ask to restart not appear
+echo '* libraries/restart-without-asking boolean true' | $CMD_PREFIX debconf-set-selections
+echo -e "[ Installing updates and upgrades from repos ..]"
+$CMD_PREFIX apt-get update -y >> /dev/null
     # Get all necessary package
     clear
     echo -e "[ Installing necessary packages ..]"
-    DEBIAN_FRONTEND=noninteractive apt-get install curl -y >> /dev/null
+    DEBIAN_FRONTEND=noninteractive $CMD_PREFIX apt-get install curl -y >> /dev/null
     sleep 1
-    DEBIAN_FRONTEND=noninteractive apt-get install neofetch -y >> /dev/null
+    DEBIAN_FRONTEND=noninteractive $CMD_PREFIX apt-get install neofetch -y >> /dev/null
     sleep 1
-    DEBIAN_FRONTEND=noninteractive apt-get install net-tools -y >> /dev/null
+    DEBIAN_FRONTEND=noninteractive $CMD_PREFIX apt-get install net-tools -y >> /dev/null
     sleep 1
-    DEBIAN_FRONTEND=noninteractive apt-get install htop -y >> /dev/null
+    DEBIAN_FRONTEND=noninteractive $CMD_PREFIX apt-get install htop -y >> /dev/null
     sleep 1 
-    DEBIAN_FRONTEND=noninteractive apt-get install sed -y >> /dev/null
+    DEBIAN_FRONTEND=noninteractive $CMD_PREFIX apt-get install sed -y >> /dev/null
     sleep 1
-    DEBIAN_FRONTEND=noninteractive apt-get install ncdu -y >> /dev/null
+    DEBIAN_FRONTEND=noninteractive $CMD_PREFIX apt-get install ncdu -y >> /dev/null
     
     ## Install micro
-    wget https://github.com/zyedidia/micro/releases/download/v2.0.12/micro-2.0.12-amd64.deb 
-    dpkg -i micro-2.0.12-amd64.deb
-    mv /usr/bin/micro /usr/local/bin
+    $CMD_PREFIX wget https://github.com/zyedidia/micro/releases/download/v2.0.12/micro-2.0.12-amd64.deb 
+    $CMD_PREFIX dpkg -i micro-2.0.12-amd64.deb
+    $CMD_PREFIX mv /usr/bin/micro /usr/local/bin
     rm micro-2.0.12-amd64.deb
     cd
     clear
